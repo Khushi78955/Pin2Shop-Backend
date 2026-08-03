@@ -5,6 +5,8 @@ const app = express();
 
 const PORT = 3000;
 
+app.use(express.json());
+
 app.get("/", (request, response) => {
     response.send("Pin2Shop Backend Running");
 });

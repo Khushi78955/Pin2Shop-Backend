@@ -1,7 +1,8 @@
 import { Request, Response } from "express";
+import { searchProducts } from "../services/search.service.js";
 
-export function searchProducts(request: Request, response: Response) {
-    response.json({
-        message: "Search endpoint working"
-    });
+export async function search(request: Request, response: Response) {
+    const { query } = request.body;
+    const result = await searchProducts(query);
+    response.json(result);
 }
