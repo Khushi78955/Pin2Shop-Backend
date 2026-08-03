@@ -1,5 +1,6 @@
 import express from "express";
 import searchRoutes from "./routes/search.routes.js";
+import { errorHandler } from "./errors/error.middleware.js";
 
 const app = express();
 
@@ -12,6 +13,9 @@ app.get("/", (request, response) => {
 });
 
 app.use("/api/search", searchRoutes);
+
+
+app.use(errorHandler);
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
