@@ -9,6 +9,8 @@ export class ProviderManager {
         ];
     }
     getProviders(): Provider[] {
-        return this.providers;
+        return this.providers.filter(
+            (provider) => provider.enabled
+        );
     }
 }
