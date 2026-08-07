@@ -2,14 +2,13 @@ import { NextFunction, Request, Response } from "express";
 
 export function errorHandler(
     error: Error,
-    request: Request,
+    _request: Request,
     response: Response,
-    next: NextFunction
+    _next: NextFunction
 ) {
     console.error(error);
-    response.status(500).json({
+    return response.status(500).json({
         success: false,
         message: "Internal Server Error"
-    });
-
+    })
 }

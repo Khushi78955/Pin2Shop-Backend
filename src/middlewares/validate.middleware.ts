@@ -11,6 +11,6 @@ export function validate(schema: ZodType) {
             })
         }
         request.body = result.data
-        next()
+        return next();
     }
 }

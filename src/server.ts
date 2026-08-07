@@ -1,10 +1,12 @@
+import "dotenv/config";
 import express from "express";
 import searchRoutes from "./routes/search.routes.js";
 import { errorHandler } from "./errors/error.middleware.js";
 
+
 const app = express();
 
-const PORT = 3000;
+const PORT = Number(process.env.PORT) || 3000;
 
 app.use(express.json());
 
